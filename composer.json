@@ -1,0 +1,41 @@
+{
+  "name": "apurba-labs/laravel-approval-engine-filament",
+  "description": "Enterprise-grade Filament PHP interface for the Laravel Approval Engine.",
+  "keywords": [
+        "laravel",
+        "filament",
+        "approval-engine",
+        "workflow",
+        "tall-stack"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+        {
+            "name": "Apurba Singh",
+            "email": "apurbansinghdev@gmail.com"
+        }
+    ],
+
+  "require": {
+    "php": "^8.1",
+    "filament/filament": "^3.0",
+    "apurba-labs/laravel-approval-engine": "^1.4"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "ApurbaLabs\\ApprovalEngineFilament\\": "src/"
+    }
+  },
+
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ApurbaLabs\\ApprovalEngineFilament\\ApprovalEngineFilamentServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
