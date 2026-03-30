@@ -5,12 +5,17 @@ namespace ApurbaLabs\ApprovalEngineFilament\Resources;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Tables\Actions\Action;
 
 use ApurbaLabs\ApprovalEngine\Models\WorkflowApproval;
+use ApurbaLabs\ApprovalEngineFilament\Resources\WorkflowApprovalResource\Pages;
+
 
 class WorkflowApprovalResource extends Resource
 {
     protected static ?string $model = WorkflowApproval::class;
+    
+    protected static ?string $slug = 'workflow-approvals';
 
     protected static ?string $navigationIcon = 'heroicon-o-check-circle';
 
@@ -28,6 +33,37 @@ class WorkflowApprovalResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
+                Action::make('approve')
+                    ->label('Approve')
+                    ->color('success')
+                    ->requiresConfirmation()
+                    ->visible(fn ($record) => $record->status === 'pending')
+                    ->action(fn ($record) => $record->update([
+                        'status' => 'approved',
+                        'completed_at' => now(),
+                    ])),
+
+                Action::make('reject')
+                    ->label('Reject')
+                    ->color('danger')
+                    ->requiresConfirmation()
+                    ->visible(fn ($record) => $record->status === 'pending')
+                    ->action(fn ($record) => $record->update([
+                        'status' => 'rejected',
+                        'completed_at' => now(),
+                    ])),
             ]);
+    }
+    public static function getEloquentQuery(): \Illuminate\Database\Eloquent\Builder
+    {
+        return parent::getEloquentQuery()
+            ->where('user_id', auth()->id());
+    }
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListWorkflowApprovals::route('/'),
+            'view' => Pages\ViewWorkflowApproval::route('/{record}'),
+        ];
     }
 }
