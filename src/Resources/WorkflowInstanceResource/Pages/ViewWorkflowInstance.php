@@ -8,14 +8,15 @@ use Filament\Infolists\Infolist;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\Section;
+use Filament\Schemas\Schema; 
 
 class ViewWorkflowInstance extends ViewRecord
 {
     protected static string $resource = WorkflowInstanceResource::class;
 
-    public function infolist(Infolist $infolist): Infolist
+    public function infolist(Schema $schema): Schema
     {
-        return $infolist->schema([
+        return $schema->components([
             Section::make('Workflow Details')
                 ->columns(2)
                 ->schema([
@@ -38,7 +39,6 @@ class ViewWorkflowInstance extends ViewRecord
                     RepeatableEntry::make('approvals')
                         ->label('Stages')
                         ->schema([
-                            // Show user name instead of just ID
                             TextEntry::make('user.name')
                                 ->label('Approver')
                                 ->placeholder('Not Assigned Yet'),
@@ -49,10 +49,10 @@ class ViewWorkflowInstance extends ViewRecord
                             TextEntry::make('due_at')
                                 ->label('Deadline')
                                 ->dateTime()
-                                ->since() // Shows "2 days ago" or "in 3 hours"
+                                ->since()
                                 ->color('gray'),
                         ])
-                        ->columns(3) // Layout them side-by-side inside the repeater
+                        ->columns(3)
                 ])
         ]);
     }

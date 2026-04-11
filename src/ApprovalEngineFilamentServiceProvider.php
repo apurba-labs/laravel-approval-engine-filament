@@ -12,12 +12,10 @@ class ApprovalEngineFilamentServiceProvider extends PackageServiceProvider
 
     public function register(): void
     {
-        
         Panel::configureUsing(function (Panel $panel): void {
             if ($panel->getId() !== 'admin') {
                 return;
             }
-
             $panel->plugin(ApprovalEngineFilamentPlugin::make());
         });
     }

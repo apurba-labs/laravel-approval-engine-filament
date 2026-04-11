@@ -17,13 +17,21 @@ class WorkflowInstanceResource extends Resource
 
     protected static ?string $slug = 'workflow-instances';
 
-    protected static ?string $navigationIcon = 'heroicon-o-cpu-chip';
+    public static function getNavigationLabel(): string
+    {
+        return __('approval-engine::filament.nav.label') ?? 'Active Workflows';
+    }
 
-    protected static ?string $navigationGroup = 'Approval Engine';
-    
-    protected static ?string $navigationLabel = 'Active Workflows'; 
+    public static function getNavigationGroup(): ?string
+    {
+        return __('approval-engine::filament.nav.group') ?? 'Approval Engine';
+    }
 
-   
+    public static function getNavigationIcon(): string | \Illuminate\Contracts\Support\Htmlable | null
+    {
+        return 'heroicon-o-cpu-chip';
+    }
+
     public static function getPages(): array
     {
         return [

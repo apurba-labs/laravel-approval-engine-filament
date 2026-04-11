@@ -8,14 +8,15 @@ use Filament\Infolists\Infolist;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\Section;
+use Filament\Schemas\Schema; 
 
 class ViewWorkflowApproval extends ViewRecord
 {
     protected static string $resource = WorkflowApprovalResource::class;
 
-    public function infolist(Infolist $infolist): Infolist
+    public function infolist(Schema $schema): Schema
     {
-        return $infolist->schema([
+        return $schema->components([
             Section::make('Workflow Details')
                 ->columns(2)
                 ->schema([

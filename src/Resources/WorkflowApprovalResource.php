@@ -17,9 +17,21 @@ class WorkflowApprovalResource extends Resource
     
     protected static ?string $slug = 'workflow-approvals';
 
-    protected static ?string $navigationIcon = 'heroicon-o-check-circle';
+    public static function getNavigationLabel(): string
+    {
+        return __('approval-engine::filament.nav.label') ?? 'Active Workflows';
+    }
 
-    protected static ?string $navigationGroup = 'Approval Engine';
+    public static function getNavigationGroup(): ?string
+    {
+        return __('approval-engine::filament.nav.group') ?? 'Approval Engine';
+    }
+
+    public static function getNavigationIcon(): string | \Illuminate\Contracts\Support\Htmlable | null
+    {
+        return 'heroicon-o-check-circle';
+    }
+
 
     public static function table(Table $table): Table
     {
