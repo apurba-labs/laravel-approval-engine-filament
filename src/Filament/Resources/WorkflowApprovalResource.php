@@ -1,6 +1,6 @@
 <?php
 
-namespace ApurbaLabs\ApprovalEngineFilament\Resources;
+namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources;
 
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -8,7 +8,7 @@ use Filament\Tables\Table;
 use Filament\Tables\Actions\Action;
 
 use ApurbaLabs\ApprovalEngine\Models\WorkflowApproval;
-use ApurbaLabs\ApprovalEngineFilament\Resources\WorkflowApprovalResource\Pages;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowApprovalResource\Pages;
 
 
 class WorkflowApprovalResource extends Resource

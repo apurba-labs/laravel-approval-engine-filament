@@ -1,9 +1,9 @@
 <?php
 
-namespace ApurbaLabs\ApprovalEngineFilament\Resources\WorkflowApprovalResource\Pages;
+namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowApprovalResource\Pages;
 
 use Filament\Resources\Pages\ListRecords;
-use ApurbaLabs\ApprovalEngineFilament\Resources\WorkflowApprovalResource;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowApprovalResource;
 
 class ListWorkflowApprovals extends ListRecords
 {

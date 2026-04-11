@@ -4,18 +4,23 @@ namespace ApurbaLabs\ApprovalEngineFilament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
-
-use ApurbaLabs\ApprovalEngineFilament\Resources\WorkflowInstanceResource;
-use ApurbaLabs\ApprovalEngineFilament\Resources\WorkflowApprovalResource;
+// Import resources
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowInstanceResource;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowApprovalResource;
 
 class ApprovalEngineFilamentPlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'approval-engine';
+        return 'laravel-approval-engine-filament';
     }
 
-    public function register(Panel $panel): void
+    public static function make(): static
+    {
+        return app(static::class);
+    }
+
+    public function register(Panel $panel): Panel
     {
         $panel->resources([
             WorkflowInstanceResource::class,
@@ -26,10 +31,5 @@ class ApprovalEngineFilamentPlugin implements Plugin
     public function boot(Panel $panel): void
     {
         //
-    }
-
-    public static function make(): static
-    {
-        return new static(); 
     }
 }
