@@ -20,7 +20,7 @@ class ApprovalEngineFilamentPlugin implements Plugin
         return app(static::class);
     }
 
-    public function register(Panel $panel): Panel
+    public function register(Panel $panel): void
     {
         $panel->resources([
             WorkflowInstanceResource::class,

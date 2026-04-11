@@ -21,6 +21,23 @@ class ApprovalEngineFilamentServiceProvider extends PackageServiceProvider
     }
     public function boot(): void
     {
-        
+        // Register the translation namespace 'approval-engine'
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'approval-engine');
+
+        // Register views
+        if (is_dir(__DIR__ . '/../resources/views')) {
+            $this->loadViewsFrom(__DIR__ . '/../resources/views', 'approval-engine');
+        }
+
+        // Publish config
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../config/approval-engine-filament.php' => config_path('approval-engine-filament.php'),
+            ], 'approval-engine-config');
+
+            $this->publishes([
+                __DIR__ . '/../resources/lang' => resource_path('lang/vendor/approval-engine'),
+            ], 'approval-engine-lang');
+        }   
     }
 }
