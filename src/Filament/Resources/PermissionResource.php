@@ -11,8 +11,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
 use Filament\Resources\Resource;
 use Filament\Actions\EditAction;
-use Filament\Forms\Get;
-use Filament\Forms\Set;
+use Filament\Schemas\Components\Utilities\Set;
+use Filament\Schemas\Components\Utilities\Get;
 
 use ApurbaLabs\IAM\Models\Permission;
 use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\PermissionResource\Pages;
