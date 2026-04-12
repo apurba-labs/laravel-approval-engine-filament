@@ -1,10 +1,10 @@
 <?php
 
-namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\PermissionResource\Pages;
+namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Permissions\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\PermissionResource;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Permissions\PermissionResource;
 
 class ListPermissions extends ListRecords
 {

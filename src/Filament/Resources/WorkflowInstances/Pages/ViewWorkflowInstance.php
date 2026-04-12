@@ -1,6 +1,6 @@
 <?php
 
-namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowApprovalResource\Pages;
+namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowInstances\Pages;
 
 use Filament\Resources\Pages\ViewRecord;
 use Filament\Infolists\Infolist;
@@ -9,11 +9,11 @@ use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\Section;
 use Filament\Schemas\Schema; 
 
-use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowApprovalResource;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowInstances\WorkflowInstanceResource;
 
-class ViewWorkflowApproval extends ViewRecord
+class ViewWorkflowInstance extends ViewRecord
 {
-    protected static string $resource = WorkflowApprovalResource::class;
+    protected static string $resource = WorkflowInstanceResource::class;
 
     public function infolist(Schema $schema): Schema
     {
@@ -40,7 +40,6 @@ class ViewWorkflowApproval extends ViewRecord
                     RepeatableEntry::make('approvals')
                         ->label('Stages')
                         ->schema([
-                            // Show user name instead of just ID
                             TextEntry::make('user.name')
                                 ->label('Approver')
                                 ->placeholder('Not Assigned Yet'),
@@ -51,10 +50,10 @@ class ViewWorkflowApproval extends ViewRecord
                             TextEntry::make('due_at')
                                 ->label('Deadline')
                                 ->dateTime()
-                                ->since() // Shows "2 days ago" or "in 3 hours"
+                                ->since()
                                 ->color('gray'),
                         ])
-                        ->columns(3) // Layout them side-by-side inside the repeater
+                        ->columns(3)
                 ])
         ]);
     }

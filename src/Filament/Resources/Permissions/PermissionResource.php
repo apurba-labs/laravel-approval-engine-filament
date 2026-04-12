@@ -1,6 +1,6 @@
 <?php
 
-namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources;
+namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Permissions;
 
 use Filament\Tables;
 use Filament\Tables\Actions;
@@ -15,7 +15,7 @@ use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Components\Utilities\Get;
 
 use ApurbaLabs\IAM\Models\Permission;
-use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\PermissionResource\Pages;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Permissions\Pages;
 
 class PermissionResource extends Resource
 {

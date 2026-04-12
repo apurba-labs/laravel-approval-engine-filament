@@ -5,10 +5,11 @@ namespace ApurbaLabs\ApprovalEngineFilament;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 // Import resources
-use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowInstanceResource;
-use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowApprovalResource;
-use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\RoleResource;
-use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\PermissionResource;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowInstances\WorkflowInstanceResource;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowApprovals\WorkflowApprovalResource;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Roles\RoleResource;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Permissions\PermissionResource;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Users\UserResource;
 
 class ApprovalEngineFilamentPlugin implements Plugin
 {
@@ -29,6 +30,7 @@ class ApprovalEngineFilamentPlugin implements Plugin
             PermissionResource::class,
             WorkflowInstanceResource::class,
             WorkflowApprovalResource::class,
+            UserResource::class,
         ]);
     }
 

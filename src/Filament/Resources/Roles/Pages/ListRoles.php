@@ -1,10 +1,10 @@
 <?php
 
-namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\RoleResource\Pages;
+namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Roles\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\RoleResource;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Roles\RoleResource;
 
 class ListRoles extends ListRecords
 {

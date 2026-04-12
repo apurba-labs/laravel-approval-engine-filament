@@ -1,6 +1,6 @@
 <?php
 
-namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources;
+namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Roles;
 
 use Filament\Forms;
 use Filament\Tables;
@@ -8,17 +8,17 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-
+use BackedEnum;
 use ApurbaLabs\IAM\Models\Role;
 use ApurbaLabs\IAM\Models\Permission;
 
-use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\RoleResource\Pages;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Roles\Pages;
 
 class RoleResource extends Resource
 {
     protected static ?string $model = Role::class;
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-shield-check';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-shield-check';
 
     public static function getNavigationGroup(): ?string
     {

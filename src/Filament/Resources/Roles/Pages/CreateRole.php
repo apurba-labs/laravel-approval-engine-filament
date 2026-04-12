@@ -1,9 +1,9 @@
 <?php
 
-namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\RoleResource\Pages;
+namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Roles\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\RoleResource;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\Roles\RoleResource;
 
 class CreateRole extends CreateRecord
 {

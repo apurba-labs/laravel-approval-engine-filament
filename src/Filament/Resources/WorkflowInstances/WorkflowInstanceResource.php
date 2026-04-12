@@ -1,6 +1,6 @@
 <?php
 
-namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources;
+namespace ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowInstances;
 
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -9,7 +9,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 
 use ApurbaLabs\ApprovalEngine\Models\WorkflowInstance;
-use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowInstanceResource\Pages;
+use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowInstances\Pages;
 
 class WorkflowInstanceResource extends Resource
 {
