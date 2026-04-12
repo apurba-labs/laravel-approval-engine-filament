@@ -80,4 +80,9 @@ class RoleResource extends Resource
             'edit' => Pages\EditRole::route('/{record}/edit'),
         ];
     }
+
+    public static function canCreate(): bool
+    {
+        return true;
+    }
 }
