@@ -25,6 +25,8 @@ class PermissionResource extends Resource
 
     protected static ?string $navigationLabel = 'Permissions';
 
+    protected static ?int $navigationSort = 5;
+
     public static function getNavigationGroup(): ?string
     {
         return __('approval-engine::filament.nav.group');

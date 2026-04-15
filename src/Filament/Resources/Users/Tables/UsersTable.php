@@ -21,7 +21,7 @@ class UsersTable
                 TextColumn::make('email')
                     ->searchable(),
 
-                // 🔥 SHOW ROLES
+                // SHOW ROLES
                 TextColumn::make('roles.name')
                     ->label('Roles')
                     ->badge()

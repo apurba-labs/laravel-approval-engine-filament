@@ -27,7 +27,7 @@ class RoleResource extends Resource
 
     protected static ?string $navigationLabel = 'Roles';
 
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 4;
 
     // -------------------------------
     // FORM (Create / Edit)

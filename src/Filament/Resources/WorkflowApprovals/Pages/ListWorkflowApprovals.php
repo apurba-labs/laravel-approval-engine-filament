@@ -8,4 +8,14 @@ use ApurbaLabs\ApprovalEngineFilament\Filament\Resources\WorkflowApprovals\Workf
 class ListWorkflowApprovals extends ListRecords
 {
     protected static string $resource = WorkflowApprovalResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            \Filament\Actions\Action::make('refresh')
+                ->label('Refresh')
+                ->icon('heroicon-o-arrow-path')
+                ->action(fn () => null),
+        ];
+    }
 }

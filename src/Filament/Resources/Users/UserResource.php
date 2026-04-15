@@ -21,6 +21,8 @@ class UserResource extends Resource
         return config('auth.providers.users.model');
     }
 
+    protected static ?int $navigationSort = 3;
+    
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'User';
