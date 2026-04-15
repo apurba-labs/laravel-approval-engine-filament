@@ -44,9 +44,11 @@ class WorkflowApprovalResource extends Resource
                 Tables\Columns\TextColumn::make('workflowInstance.module')
                     ->label('Module')
                     ->badge(),
+                Tables\Columns\TextColumn::make('workflowInstance.payload.total_amount')
+                    ->label('Amount'),
 
-                Tables\Columns\TextColumn::make('user.name')
-                    ->label('Assigned To'),
+                Tables\Columns\TextColumn::make('workflowInstance.payload.user_id')
+                    ->label('Requested By'),
 
                 Tables\Columns\BadgeColumn::make('status')
                     ->colors([
